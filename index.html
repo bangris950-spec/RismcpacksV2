@@ -49,7 +49,8 @@
     letter-spacing:1px;
   }
   .logo p { font-size:.72rem; color:var(--text-dim); font-family:var(--pixel-font); }
-  .header-stats { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  
+  .header-stats { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
   .stat-pill {
     background:rgba(92,184,92,.1); border:2px solid var(--green-dark);
     border-radius:8px; padding:6px 14px;
@@ -59,7 +60,7 @@
   }
   .stat-pill .val { color:var(--gold); font-size:1rem; }
 
-  /* TOMBOL VIP */
+  /* TOMBOL VIP POJOK KANAN ATAS */
   .btn-vip {
     background:linear-gradient(180deg, #ffd700, #b8860b);
     color:#000; border:2px solid #fff; border-radius:8px;
@@ -70,7 +71,7 @@
     display:flex; align-items:center; gap:5px;
   }
   .btn-vip:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(255,215,0,.8); }
-  .btn-vip.active { background:linear-gradient(180deg, #4cd97b, #2a7a4a); color:#fff; border-color:#4cd97b; }
+  .btn-vip.active { background:linear-gradient(180deg, #4cd97b, #2a7a4a); color:#fff; border-color:#4cd97b; box-shadow:0 0 15px rgba(76,217,123,.5); }
 
   .container { max-width:1100px; margin:0 auto; padding:20px 20px 80px; }
   .hero {
@@ -205,40 +206,76 @@
     box-shadow:0 4px 0 rgba(0,0,0,.4), 0 0 15px rgba(92,184,92,.5);
   }
   
-  /* MODAL */
-  #modalVIP {
-    position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:1000;
+  /* ================= MODAL ================= */
+  #modal {
+    position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1000;
     display:none; align-items:center; justify-content:center; padding:20px;
-    backdrop-filter:blur(4px);
+    backdrop-filter:blur(5px);
   }
-  #modalVIP.show { display:flex; }
+  #modal.show { display:flex; }
+  
   .modal-box {
     background:var(--bg-card); border:3px solid var(--gold);
-    border-radius:16px; padding:24px; max-width:400px; width:100%;
-    text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.8);
+    border-radius:16px; padding:24px; max-width:420px; width:100%;
+    text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.9);
     animation:pop .3s ease-out;
   }
-  @keyframes pop { 0%{transform:scale(.8);} 100%{transform:scale(1);} }
-  .modal-box h3 { color:var(--gold); font-family:var(--pixel-font); font-size:1.2rem; margin-bottom:10px; }
-  .modal-box p { font-size:.85rem; color:var(--text-dim); margin-bottom:16px; line-height:1.5; }
-  .modal-box input {
+  @keyframes pop { 0%{transform:scale(.85);opacity:0;} 100%{transform:scale(1);opacity:1;} }
+  
+  .modal-box h3 { color:var(--gold); font-family:var(--pixel-font); font-size:1.2rem; margin-bottom:8px; }
+  .modal-box p { font-size:.85rem; color:var(--text-dim); margin-bottom:15px; }
+  
+  .iklan-slot {
+    background:#0d1117; height:120px; border:2px dashed var(--border);
+    border-radius:8px; display:flex; align-items:center; justify-content:center;
+    margin:15px 0; color:var(--text-dim); font-size:.8rem; font-weight:700;
+    padding: 10px; text-align: center;
+  }
+
+  .timer-text {
+    font-size:2.5rem; font-weight:900; color:var(--gold);
+    margin:10px 0; font-family:var(--pixel-font);
+    text-shadow: 0 0 15px rgba(255,215,0,.5);
+  }
+
+  .vip-promo {
+    background:linear-gradient(135deg, #2a1e4a, #4b2a7a);
+    border:2px solid var(--gold); border-radius:12px;
+    padding:15px; margin:15px 0; text-align:center;
+  }
+  .vip-promo h4 { color:#ffd700; font-size:1rem; margin-bottom:5px; text-shadow:0 0 10px rgba(255,215,0,.5); }
+  .vip-promo p { font-size:.75rem; color:#e6edf3; margin-bottom:10px; }
+  
+  .btn-beli-vip {
+    display:inline-block; background:linear-gradient(180deg, #ffd700, #b8860b);
+    color:#000; padding:10px 20px; border-radius:8px;
+    font-weight:900; text-decoration:none; font-size:.85rem;
+    box-shadow:0 4px 0 #7a5a00; transition:.15s;
+    width:100%;
+  }
+  .btn-beli-vip:hover { transform:translateY(-2px); box-shadow:0 6px 0 #7a5a00; }
+  
+  .btn-lanjut-download {
+    display:none; width:100%; background:var(--green);
+    color:#fff; padding:12px; border:none; border-radius:8px;
+    font-weight:900; cursor:pointer; font-size:1rem;
+    margin-top:10px;
+  }
+  .btn-lanjut-download.show { display:block; animation:pop .3s ease-out; }
+  .btn-close { background:transparent !important; color:var(--text-dim) !important; margin-top:10px; box-shadow:none !important; text-decoration:underline; font-size:0.75rem; cursor:pointer; }
+
+  /* MODAL VIP */
+  #modalVIP .modal-box { border-color: #ffd700; }
+  #modalVIP input {
     width:100%; padding:12px; background:#0d1117; border:2px solid var(--border);
     border-radius:8px; color:#fff; text-align:center; font-size:1rem;
     margin-bottom:12px; font-weight:900; letter-spacing:2px;
   }
-  .modal-box input:focus { outline:none; border-color:var(--gold); }
-  .modal-box button {
+  #modalVIP input:focus { outline:none; border-color:var(--gold); }
+  #modalVIP button.btn-submit {
     width:100%; padding:12px; background:linear-gradient(180deg,#ffd700,#b8860b);
     color:#000; border:none; border-radius:8px; font-weight:900;
-    cursor:pointer; font-size:1rem; transition:.2s;
-  }
-  .modal-box button:hover { transform:scale(1.02); }
-  .btn-close { background:transparent !important; color:var(--text-dim) !important; margin-top:8px; box-shadow:none !important; }
-  .btn-close:hover { color:#fff !important; }
-  
-  .vip-status {
-    font-size:.75rem; color:#4cd97b; font-weight:800;
-    display:none; margin-top:4px; text-align:center;
+    cursor:pointer; font-size:1rem;
   }
   
   @media (max-width:600px) {
@@ -256,11 +293,13 @@
       <div>
         <h1>MOD MINECRAFT</h1>
         <p>DOWNLOAD GRATIS · 100% AMAN</p>
-        <div class="vip-status" id="vipStatusDisplay">👑 Status: VIP Aktif</div>
       </div>
     </div>
+    
     <div class="header-stats">
       <div class="stat-pill">📦 Total: <span class="val" id="totalMods">0</span></div>
+      <div class="stat-pill">⭐ Rating: <span class="val">4.8</span></div>
+      <!-- TOMBOL VIP -->
       <button class="btn-vip" id="btnOpenVIP">👑 VIP</button>
     </div>
   </div>
@@ -269,7 +308,7 @@
 <div class="container">
   <div class="hero">
     <h2>⛏️ Koleksi Mod Minecraft Terbaik</h2>
-    <p>Kumpulan mod pilihan untuk menambah seru petualanganmu. Klik tombol VIP untuk bebas iklan!</p>
+    <p>Kumpulan mod pilihan untuk menambah seru petualanganmu. Punya kode VIP? Bebas iklan!</p>
     <div class="badges">
       <span class="badge">✅ GRATIS</span>
       <span class="badge">🔒 AMAN</span>
@@ -295,20 +334,56 @@
   <div class="mod-grid" id="modGrid"></div>
 </div>
 
-<!-- MODAL VIP -->
-<div id="modalVIP">
+<!-- ================= MODAL IKLAN ================= -->
+<div id="modal">
+  <div class="modal-box">
+    <h3>⏳ Menyiapkan File...</h3>
+    <p>Harap tunggu sebentar, file kamu sedang disiapkan.</p>
+    
+    <div class="iklan-slot">
+      (Slot Iklan Anda)<br><br>
+      <small style="opacity:0.5;">Bisa diganti gambar iklan nanti</small>
+    </div>
+    
+    <div class="timer-text" id="timerDisplay">5</div>
+    
+    <div class="vip-promo">
+      <h4>👑 Bebas Iklan & Timer!</h4>
+      <p>Beli Akses VIP cuma Rp2.000 / minggu.<br>Klik tombol di bawah untuk membeli via Trakteer.</p>
+      <a href="https://trakteer.id/username-kamu" target="_blank" class="btn-beli-vip">💳 Beli VIP (Rp2.000)</a>
+    </div>
+
+    <button class="btn-lanjut-download" id="btnLanjutDownload">⬇️ Lanjut Download</button>
+    <button class="btn-close" id="btnCloseIklan">Batal Download</button>
+  </div>
+</div>
+
+<!-- ================= MODAL VIP (PASSWORD) ================= -->
+<div id="modalVIP" style="position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1001; display:none; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(5px);">
   <div class="modal-box">
     <h3>👑 Akses VIP</h3>
     <p>Masukkan kode rahasia dari Bang Ris untuk menghilangkan iklan selama 7 hari.</p>
     <input type="text" id="inputVIPCode" placeholder="KODE-VIP-KAMU" autocomplete="off">
-    <button id="btnSubmitVIP">Aktifkan VIP</button>
-    <button class="btn-close" id="btnCloseModal">Tutup</button>
+    <button class="btn-submit" id="btnSubmitVIP">Aktifkan VIP</button>
+    <button class="btn-close" id="btnCloseVIP">Tutup</button>
   </div>
 </div>
 
 <script>
 /* ================================================================
-   👇 DATA MOD KAMU (JANGAN DIUBAH) 👇
+   ⚙️ PENGATURAN (GANTI DI SINI) ⚙️
+   ================================================================ */
+// 1. GANTI LINK TRAKTEER
+const LINK_TRAKTEER = "https://trakteer.id/username-kamu"; 
+
+// 2. GANTI KODE VIP RAHASIA
+const KODE_VIP_RAHASIA = "VIP-BANGRIS"; 
+
+// 3. BERAPA HARI VIP BERLAKU
+const DURASI_VIP_HARI = 7; 
+
+/* ================================================================
+   9 DATA MOD KAMU (JANGAN DIUBAH)
    ================================================================ */
 const MODS = [
   { id:1, name:"Torch Offhand BH", category:"addon", emoji:"🔦", version:"v3.9.5", rating:4.8, downloads:"10.9 KB", desc:"Add-on Minecraft Bedrock yang memungkinkan kamu memegang obor di tangan kiri (offhand).", link:"https://www.mediafire.com/file/qywov0zighrv4if/Torch_Offhand_BH_v3.9.5.mcpack/file" },
@@ -322,130 +397,54 @@ const MODS = [
   { id:9, name:"Weapon & Armor Pack", category:"armor", emoji:"🛡️", version:"v1.0", rating:4.8, downloads:"4.2 MB", desc:"Tambahkan set armor dan senjata baru yang keren ke dalam inventory-mu.", link:"https://www.mediafire.com/file/n6wk9afi9mec4ju/vCOz8mJgQw.mcaddon/file" }
 ];
 
-/* ================================================================
-   ⚙️ PENGATURAN VIP (UBAH DI SINI) ⚙️
-   ================================================================ */
-// 1. GANTI KODE VIP KAMU DI SINI
-const KODE_VIP_RAHASIA = "VIP-BANGRIS"; 
-// 2. BERAPA HARI VIP BERLAKU
-const DURASI_VIP_HARI = 7; 
+const CAT_LABELS = { addon:"🧩 Add-on", shader:"✨ Shader", world:"🌍 World", weapon:"⚔️ Weapon", armor:"🛡️ Armor", mob:"🐲 Mob" };
+let currentFilter = 'all', currentSearch = '';
+const grid = document.getElementById('modGrid');
+const totalModsEl = document.getElementById('totalMods');
 
 /* ================================================================
-   LOGIKA VIP (JANGAN DIUBAH)
+   LOGIKA VIP (PASSWORD)
    ================================================================ */
 const btnOpenVIP = document.getElementById('btnOpenVIP');
 const modalVIP = document.getElementById('modalVIP');
-const btnCloseModal = document.getElementById('btnCloseModal');
+const btnCloseVIP = document.getElementById('btnCloseVIP');
 const btnSubmitVIP = document.getElementById('btnSubmitVIP');
 const inputVIPCode = document.getElementById('inputVIPCode');
-const vipStatusDisplay = document.getElementById('vipStatusDisplay');
 
 function cekStatusVIP() {
   const vipExpired = localStorage.getItem('vip_expired');
   if (vipExpired) {
     const now = new Date().getTime();
     if (now < parseInt(vipExpired)) {
-      // VIP Aktif
       btnOpenVIP.classList.add('active');
       btnOpenVIP.innerHTML = "👑 VIP Aktif";
-      vipStatusDisplay.style.display = "block";
       return true;
     } else {
-      // VIP Kadaluarsa
       localStorage.removeItem('vip_expired');
       btnOpenVIP.classList.remove('active');
       btnOpenVIP.innerHTML = "👑 VIP";
-      vipStatusDisplay.style.display = "none";
       return false;
     }
   }
+  btnOpenVIP.classList.remove('active');
+  btnOpenVIP.innerHTML = "👑 VIP";
   return false;
 }
 
 btnOpenVIP.addEventListener('click', () => {
   if (cekStatusVIP()) {
-    alert("Kamu sudah VIP! Iklan sudah hilang. Sisa waktu: " + Math.ceil((parseInt(localStorage.getItem('vip_expired')) - new Date().getTime()) / (1000 * 60 * 60 * 24)) + " hari lagi.");
+    const sisaHari = Math.ceil((parseInt(localStorage.getItem('vip_expired')) - new Date().getTime()) / (1000 * 60 * 60 * 24));
+    alert("Kamu sudah VIP! Iklan sudah hilang. Sisa waktu: " + sisaHari + " hari lagi.");
   } else {
-    modalVIP.classList.add('show');
+    modalVIP.style.display = 'flex';
   }
 });
 
-btnCloseModal.addEventListener('click', () => {
-  modalVIP.classList.remove('show');
+btnCloseVIP.addEventListener('click', () => {
+  modalVIP.style.display = 'none';
 });
 
 btnSubmitVIP.addEventListener('click', () => {
   const kode = inputVIPCode.value.trim().toUpperCase();
   if (kode === KODE_VIP_RAHASIA) {
-    const expiredTime = new Date().getTime() + (DURASI_VIP_HARI * 24 * 60 * 60 * 1000);
-    localStorage.setItem('vip_expired', expiredTime);
-    alert("🎉 Berhasil! Kamu sekarang VIP. Iklan akan hilang selama " + DURASI_VIP_HARI + " hari.");
-    modalVIP.classList.remove('show');
-    inputVIPCode.value = "";
-    cekStatusVIP(); // Update tampilan
-  } else {
-    alert("❌ Kode VIP salah! Silakan cek kembali.");
-  }
-});
-
-// Panggil fungsi cek saat halaman dimuat
-cekStatusVIP();
-
-
-/* ================================================================
-   RENDER MOD (JANGAN DIUBAH)
-   ================================================================ */
-const CAT_LABELS = { addon:"🧩 Add-on", shader:"✨ Shader", world:"🌍 World", weapon:"⚔️ Weapon", armor:"🛡️ Armor", mob:"🐲 Mob" };
-let currentFilter = 'all', currentSearch = '';
-const grid = document.getElementById('modGrid');
-const totalModsEl = document.getElementById('totalMods');
-
-function renderMods() {
-  const filtered = MODS.filter(mod => {
-    const matchCat = currentFilter === 'all' || mod.category === currentFilter;
-    const matchSearch = mod.name.toLowerCase().includes(currentSearch.toLowerCase())
-      || mod.author?.toLowerCase().includes(currentSearch.toLowerCase())
-      || mod.desc.toLowerCase().includes(currentSearch.toLowerCase());
-    return matchCat && matchSearch;
-  });
-
-  grid.innerHTML = '';
-  if (filtered.length === 0) {
-    grid.innerHTML = `<div style="text-align:center; grid-column:1/-1; padding:60px 20px; color:#8b949e;"><h3>Tidak ada mod ditemukan</h3></div>`;
-    return;
-  }
-
-  filtered.forEach((mod, i) => {
-    const card = document.createElement('div');
-    card.className = 'mod-card';
-    card.style.animationDelay = (i * 0.05) + 's';
-    card.innerHTML = `
-      <div class="mod-img">
-        <span class="mod-category">${CAT_LABELS[mod.category] || mod.category}</span>
-        <span class="mod-version">${mod.version}</span>
-        <span class="emoji">${mod.emoji}</span>
-      </div>
-      <div class="mod-body">
-        <div class="mod-name">${mod.name}</div>
-        <div class="mod-author">oleh Bang Ris</div>
-        <div class="mod-desc">${mod.desc}</div>
-        <div class="mod-meta">
-          <span class="star">⭐ ${mod.rating}</span>
-          <span>📥 ${mod.downloads}</span>
-        </div>
-        <div class="mod-actions">
-          <a class="btn-download" href="${mod.link}" target="_blank" rel="noopener">⬇️ Download</a>
-        </div>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-document.getElementById('searchInput').addEventListener('input', (e) => { currentSearch = e.target.value; renderMods(); });
-document.getElementById('filterWrap').addEventListener('click', (e) => {
-  const btn = e.target.closest('.filter-btn');
-  if (!btn) return;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentFilter = btn.
+    const expiredTime = new Date(

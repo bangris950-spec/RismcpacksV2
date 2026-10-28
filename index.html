@@ -8,56 +8,27 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   :root {
     --bg-dark:#0d1117; --bg:#161b22; --bg-card:#1c2333; --bg-card-hover:#232b3e;
-    --border:#30363d; --border-glow:#4a7c3f;
-    --green:#5cb85c; --green-bright:#7ed957; --green-dark:#3a7a2a;
-    --gold:#f5c542; --red:#e74c3c; --blue:#4a9eff;
-    --text:#e6edf3; --text-dim:#8b949e; --pixel-font:'Courier New',monospace;
+    --border:#30363d; --green:#5cb85c; --green-bright:#7ed957; --green-dark:#3a7a2a;
+    --gold:#f5c542; --text:#e6edf3; --text-dim:#8b949e; --blue:#4a9eff; --pixel-font:'Courier New',monospace;
   }
   html { scroll-behavior:smooth; }
   body {
-    background:var(--bg-dark);
-    background-image:
-      linear-gradient(rgba(13,17,23,.92), rgba(13,17,23,.92)),
-      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(92,184,92,.05) 39px, rgba(92,184,92,.05) 40px),
-      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(92,184,92,.05) 39px, rgba(92,184,92,.05) 40px);
-    color:var(--text); font-family:'Segoe UI',system-ui,sans-serif;
+    background:var(--bg-dark); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif;
     min-height:100vh; line-height:1.6;
   }
   header {
-    position:sticky; top:0; z-index:100;
-    background:linear-gradient(135deg,#1a2332,#0d1117);
-    border-bottom:3px solid var(--green);
-    box-shadow:0 4px 20px rgba(92,184,92,.15);
-    padding:16px 20px;
+    position:sticky; top:0; z-index:100; background:linear-gradient(135deg,#1a2332,#0d1117);
+    border-bottom:3px solid var(--green); box-shadow:0 4px 20px rgba(92,184,92,.15); padding:16px 20px;
   }
-  .header-inner {
-    max-width:1100px; margin:0 auto;
-    display:flex; align-items:center; justify-content:space-between;
-    gap:16px; flex-wrap:wrap;
-  }
+  .header-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
   .logo { display:flex; align-items:center; gap:12px; }
-  .logo-icon {
-    font-size:2.2rem;
-    filter:drop-shadow(0 0 10px rgba(92,184,92,.6));
-    animation:float 3s ease-in-out infinite;
-  }
+  .logo-icon { font-size:2.2rem; animation:float 3s ease-in-out infinite; }
   @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-5px);} }
-  .logo h1 {
-    font-family:var(--pixel-font); font-size:1.4rem; font-weight:900;
-    color:var(--green-bright);
-    text-shadow:2px 2px 0 #000, 0 0 20px rgba(126,217,87,.4);
-    letter-spacing:1px;
-  }
+  .logo h1 { font-family:var(--pixel-font); font-size:1.4rem; font-weight:900; color:var(--green-bright); text-shadow:2px 2px 0 #000; }
   .logo p { font-size:.72rem; color:var(--text-dim); font-family:var(--pixel-font); }
   
   .header-stats { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-  .stat-pill {
-    background:rgba(92,184,92,.1); border:2px solid var(--green-dark);
-    border-radius:8px; padding:6px 14px;
-    font-size:.8rem; font-weight:700;
-    display:flex; align-items:center; gap:6px;
-    font-family:var(--pixel-font);
-  }
+  .stat-pill { background:rgba(92,184,92,.1); border:2px solid var(--green-dark); border-radius:8px; padding:6px 14px; font-size:.8rem; font-weight:700; display:flex; align-items:center; gap:6px; font-family:var(--pixel-font); }
   .stat-pill .val { color:var(--gold); font-size:1rem; }
 
   /* TOMBOL VIP POJOK KANAN ATAS */
@@ -66,8 +37,7 @@
     color:#000; border:2px solid #fff; border-radius:8px;
     padding:8px 16px; font-weight:900; cursor:pointer;
     font-family:var(--pixel-font); font-size:.8rem;
-    box-shadow:0 0 15px rgba(255,215,0,.5);
-    transition:.2s;
+    box-shadow:0 0 15px rgba(255,215,0,.5); transition:.2s;
     display:flex; align-items:center; gap:5px;
   }
   .btn-vip:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(255,215,0,.8); }
@@ -75,213 +45,62 @@
 
   .container { max-width:1100px; margin:0 auto; padding:20px 20px 80px; }
   .hero {
-    background:linear-gradient(135deg,#1c2a1c,#1a2332);
-    border:3px solid var(--green-dark); border-radius:16px;
-    padding:24px; margin-bottom:24px;
-    box-shadow:0 8px 30px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.05);
-    position:relative; overflow:hidden;
+    background:linear-gradient(135deg,#1c2a1c,#1a2332); border:3px solid var(--green-dark); border-radius:16px;
+    padding:24px; margin-bottom:24px; position:relative; overflow:hidden;
   }
-  .hero::before {
-    content:"⛏️"; position:absolute; right:20px; top:50%; transform:translateY(-50%);
-    font-size:6rem; opacity:.08; pointer-events:none;
-  }
-  .hero h2 {
-    font-family:var(--pixel-font); font-size:1.5rem; color:var(--green-bright);
-    margin-bottom:8px; text-shadow:2px 2px 0 #000;
-  }
+  .hero h2 { font-family:var(--pixel-font); font-size:1.5rem; color:var(--green-bright); margin-bottom:8px; }
   .hero p { color:var(--text-dim); font-size:.9rem; max-width:600px; }
   .hero .badges { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
-  .badge {
-    background:rgba(92,184,92,.15); border:1px solid var(--green);
-    color:var(--green-bright); padding:4px 12px; border-radius:100px;
-    font-size:.72rem; font-weight:800; font-family:var(--pixel-font);
-  }
-  .controls {
-    display:flex; gap:12px; margin-bottom:20px;
-    flex-wrap:wrap; align-items:center;
-  }
+  .badge { background:rgba(92,184,92,.15); border:1px solid var(--green); color:var(--green-bright); padding:4px 12px; border-radius:100px; font-size:.72rem; font-weight:800; font-family:var(--pixel-font); }
+  
+  .controls { display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; align-items:center; }
   .search-wrap { flex:1; min-width:220px; position:relative; }
-  .search-wrap::before {
-    content:"🔍"; position:absolute; left:14px; top:50%; transform:translateY(-50%);
-    font-size:1.1rem;
-  }
-  .search-input {
-    width:100%; padding:12px 14px 12px 44px;
-    background:var(--bg-card); border:2px solid var(--border);
-    border-radius:10px; color:var(--text); font-size:.9rem;
-    font-family:inherit; transition:.2s;
-  }
-  .search-input:focus {
-    outline:none; border-color:var(--green);
-    box-shadow:0 0 0 3px rgba(92,184,92,.2);
-  }
+  .search-wrap::before { content:"🔍"; position:absolute; left:14px; top:50%; transform:translateY(-50%); }
+  .search-input { width:100%; padding:12px 14px 12px 44px; background:var(--bg-card); border:2px solid var(--border); border-radius:10px; color:var(--text); font-size:.9rem; font-family:inherit; }
+  .search-input:focus { outline:none; border-color:var(--green); }
   .filter-wrap { display:flex; gap:6px; flex-wrap:wrap; }
-  .filter-btn {
-    padding:10px 16px; background:var(--bg-card);
-    border:2px solid var(--border); border-radius:10px;
-    color:var(--text-dim); font-weight:800; font-size:.78rem;
-    cursor:pointer; transition:.2s; font-family:var(--pixel-font);
-  }
+  .filter-btn { padding:10px 16px; background:var(--bg-card); border:2px solid var(--border); border-radius:10px; color:var(--text-dim); font-weight:800; font-size:.78rem; cursor:pointer; transition:.2s; font-family:var(--pixel-font); }
   .filter-btn:hover { border-color:var(--green); color:var(--text); }
-  .filter-btn.active {
-    background:linear-gradient(180deg,var(--green),var(--green-dark));
-    border-color:var(--green-bright); color:#fff;
-    box-shadow:0 0 15px rgba(92,184,92,.4);
-  }
-  .mod-grid {
-    display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:16px;
-  }
-  .mod-card {
-    background:var(--bg-card); border:2px solid var(--border);
-    border-radius:14px; overflow:hidden; transition:.25s;
-    display:flex; flex-direction:column; position:relative;
-    animation:cardIn .4s ease-out backwards;
-  }
-  @keyframes cardIn { 0%{opacity:0;transform:translateY(20px);} 100%{opacity:1;transform:translateY(0);} }
-  .mod-card:hover {
-    border-color:var(--green); transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(92,184,92,.25); background:var(--bg-card-hover);
-  }
-  .mod-img {
-    height:140px; background:linear-gradient(135deg,#2a3a2a,#1a2332);
-    display:flex; align-items:center; justify-content:center;
-    font-size:4rem; position:relative; overflow:hidden;
-    border-bottom:2px solid var(--border);
-  }
-  .mod-img::after {
-    content:""; position:absolute; inset:0;
-    background:repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(0,0,0,.1) 8px, rgba(0,0,0,.1) 16px);
-    pointer-events:none;
-  }
-  .mod-img .emoji {
-    filter:drop-shadow(0 6px 10px rgba(0,0,0,.5));
-    transition:transform .3s; z-index:1;
-  }
-  .mod-card:hover .mod-img .emoji { transform:scale(1.15) rotate(-5deg); }
-  .mod-version {
-    position:absolute; top:10px; right:10px;
-    background:rgba(0,0,0,.7); border:1px solid var(--gold);
-    color:var(--gold); padding:2px 8px; border-radius:6px;
-    font-size:.65rem; font-weight:900; font-family:var(--pixel-font); z-index:2;
-  }
-  .mod-category {
-    position:absolute; top:10px; left:10px;
-    background:rgba(92,184,92,.9); color:#fff;
-    padding:2px 8px; border-radius:6px;
-    font-size:.65rem; font-weight:900; font-family:var(--pixel-font); z-index:2;
-  }
+  .filter-btn.active { background:linear-gradient(180deg,var(--green),var(--green-dark)); border-color:var(--green-bright); color:#fff; }
+
+  .mod-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+  .mod-card { background:var(--bg-card); border:2px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:.25s; }
+  .mod-card:hover { border-color:var(--green); transform:translateY(-4px); }
+  .mod-img { height:140px; background:linear-gradient(135deg,#2a3a2a,#1a2332); display:flex; align-items:center; justify-content:center; font-size:4rem; position:relative; border-bottom:2px solid var(--border); }
+  .mod-version { position:absolute; top:10px; right:10px; background:rgba(0,0,0,.7); border:1px solid var(--gold); color:var(--gold); padding:2px 8px; border-radius:6px; font-size:.65rem; font-weight:900; font-family:var(--pixel-font); z-index:2; }
+  .mod-category { position:absolute; top:10px; left:10px; background:rgba(92,184,92,.9); color:#fff; padding:2px 8px; border-radius:6px; font-size:.65rem; font-weight:900; font-family:var(--pixel-font); z-index:2; }
   .mod-body { padding:14px 16px; flex:1; display:flex; flex-direction:column; }
-  .mod-name {
-    font-size:1rem; font-weight:900; color:var(--text);
-    margin-bottom:4px; font-family:var(--pixel-font); line-height:1.3;
-  }
+  .mod-name { font-size:1rem; font-weight:900; color:var(--text); margin-bottom:4px; font-family:var(--pixel-font); }
   .mod-author { font-size:.72rem; color:var(--text-dim); margin-bottom:8px; }
-  .mod-author b { color:var(--blue); }
-  .mod-desc {
-    font-size:.8rem; color:var(--text-dim); line-height:1.5;
-    margin-bottom:12px; flex:1;
-    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
-  }
-  .mod-meta {
-    display:flex; gap:10px; font-size:.7rem; color:var(--text-dim);
-    margin-bottom:10px; flex-wrap:wrap;
-  }
-  .mod-meta span { display:flex; align-items:center; gap:3px; }
-  .mod-meta .star { color:var(--gold); }
+  .mod-desc { font-size:.8rem; color:var(--text-dim); margin-bottom:12px; flex:1; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .mod-meta { display:flex; gap:10px; font-size:.7rem; color:var(--text-dim); margin-bottom:10px; }
   .mod-actions { display:flex; gap:6px; }
-  .btn-download {
-    flex:1;
-    background:linear-gradient(180deg,var(--green),var(--green-dark));
-    border:2px solid var(--green-bright); color:#fff;
-    padding:10px 12px; border-radius:8px;
-    font-weight:900; font-size:.82rem; cursor:pointer; text-decoration:none;
-    display:flex; align-items:center; justify-content:center; gap:5px;
-    font-family:var(--pixel-font); transition:.15s;
-    box-shadow:0 3px 0 rgba(0,0,0,.4);
-  }
-  .btn-download:hover {
-    background:linear-gradient(180deg,var(--green-bright),var(--green));
-    transform:translateY(-1px);
-    box-shadow:0 4px 0 rgba(0,0,0,.4), 0 0 15px rgba(92,184,92,.5);
-  }
-  
-  /* ================= MODAL ================= */
-  #modal {
-    position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1000;
-    display:none; align-items:center; justify-content:center; padding:20px;
-    backdrop-filter:blur(5px);
-  }
-  #modal.show { display:flex; }
-  
-  .modal-box {
-    background:var(--bg-card); border:3px solid var(--gold);
-    border-radius:16px; padding:24px; max-width:420px; width:100%;
-    text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.9);
-    animation:pop .3s ease-out;
-  }
-  @keyframes pop { 0%{transform:scale(.85);opacity:0;} 100%{transform:scale(1);opacity:1;} }
-  
+  .btn-download { flex:1; background:linear-gradient(180deg,var(--green),var(--green-dark)); border:2px solid var(--green-bright); color:#fff; padding:10px 12px; border-radius:8px; font-weight:900; font-size:.82rem; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 0 rgba(0,0,0,.4); }
+  .btn-download:hover { background:linear-gradient(180deg,var(--green-bright),var(--green)); }
+
+  /* MODAL IKLAN & TIMER */
+  #modalIklan { position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1000; display:none; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(5px); }
+  #modalIklan.show { display:flex; }
+  .modal-box { background:var(--bg-card); border:3px solid var(--gold); border-radius:16px; padding:24px; max-width:420px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.9); }
   .modal-box h3 { color:var(--gold); font-family:var(--pixel-font); font-size:1.2rem; margin-bottom:8px; }
   .modal-box p { font-size:.85rem; color:var(--text-dim); margin-bottom:15px; }
-  
-  .iklan-slot {
-    background:#0d1117; height:120px; border:2px dashed var(--border);
-    border-radius:8px; display:flex; align-items:center; justify-content:center;
-    margin:15px 0; color:var(--text-dim); font-size:.8rem; font-weight:700;
-    padding: 10px; text-align: center;
-  }
-
-  .timer-text {
-    font-size:2.5rem; font-weight:900; color:var(--gold);
-    margin:10px 0; font-family:var(--pixel-font);
-    text-shadow: 0 0 15px rgba(255,215,0,.5);
-  }
-
-  .vip-promo {
-    background:linear-gradient(135deg, #2a1e4a, #4b2a7a);
-    border:2px solid var(--gold); border-radius:12px;
-    padding:15px; margin:15px 0; text-align:center;
-  }
-  .vip-promo h4 { color:#ffd700; font-size:1rem; margin-bottom:5px; text-shadow:0 0 10px rgba(255,215,0,.5); }
+  .iklan-slot { background:#0d1117; height:120px; border:2px dashed var(--border); border-radius:8px; display:flex; align-items:center; justify-content:center; margin:15px 0; color:var(--text-dim); font-size:.8rem; text-align:center; }
+  .timer-text { font-size:2.5rem; font-weight:900; color:var(--gold); margin:10px 0; font-family:var(--pixel-font); }
+  .vip-promo { background:linear-gradient(135deg, #2a1e4a, #4b2a7a); border:2px solid var(--gold); border-radius:12px; padding:15px; margin:15px 0; text-align:center; }
+  .vip-promo h4 { color:#ffd700; font-size:1rem; margin-bottom:5px; }
   .vip-promo p { font-size:.75rem; color:#e6edf3; margin-bottom:10px; }
-  
-  .btn-beli-vip {
-    display:inline-block; background:linear-gradient(180deg, #ffd700, #b8860b);
-    color:#000; padding:10px 20px; border-radius:8px;
-    font-weight:900; text-decoration:none; font-size:.85rem;
-    box-shadow:0 4px 0 #7a5a00; transition:.15s;
-    width:100%;
-  }
-  .btn-beli-vip:hover { transform:translateY(-2px); box-shadow:0 6px 0 #7a5a00; }
-  
-  .btn-lanjut-download {
-    display:none; width:100%; background:var(--green);
-    color:#fff; padding:12px; border:none; border-radius:8px;
-    font-weight:900; cursor:pointer; font-size:1rem;
-    margin-top:10px;
-  }
-  .btn-lanjut-download.show { display:block; animation:pop .3s ease-out; }
-  .btn-close { background:transparent !important; color:var(--text-dim) !important; margin-top:10px; box-shadow:none !important; text-decoration:underline; font-size:0.75rem; cursor:pointer; }
+  .btn-beli-vip { display:inline-block; background:linear-gradient(180deg, #ffd700, #b8860b); color:#000; padding:10px 20px; border-radius:8px; font-weight:900; text-decoration:none; font-size:.85rem; width:100%; }
+  .btn-lanjut-download { display:none; width:100%; background:var(--green); color:#fff; padding:12px; border:none; border-radius:8px; font-weight:900; cursor:pointer; margin-top:10px; }
+  .btn-lanjut-download.show { display:block; }
+  .btn-close { background:transparent !important; color:var(--text-dim) !important; margin-top:10px; border:none; font-size:0.75rem; cursor:pointer; text-decoration:underline; }
 
   /* MODAL VIP */
-  #modalVIP .modal-box { border-color: #ffd700; }
-  #modalVIP input {
-    width:100%; padding:12px; background:#0d1117; border:2px solid var(--border);
-    border-radius:8px; color:#fff; text-align:center; font-size:1rem;
-    margin-bottom:12px; font-weight:900; letter-spacing:2px;
-  }
-  #modalVIP input:focus { outline:none; border-color:var(--gold); }
-  #modalVIP button.btn-submit {
-    width:100%; padding:12px; background:linear-gradient(180deg,#ffd700,#b8860b);
-    color:#000; border:none; border-radius:8px; font-weight:900;
-    cursor:pointer; font-size:1rem;
-  }
-  
-  @media (max-width:600px) {
-    .mod-grid { grid-template-columns:1fr; }
-    .header-inner { justify-content:center; text-align:center; }
-  }
+  #modalVIP { position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1001; display:none; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(5px); }
+  #modalVIP.show { display:flex; }
+  #inputVIPCode { width:100%; padding:12px; background:#0d1117; border:2px solid var(--border); border-radius:8px; color:#fff; text-align:center; font-size:1rem; margin-bottom:12px; font-weight:900; }
+  #btnSubmitVIP { width:100%; padding:12px; background:linear-gradient(180deg,#ffd700,#b8860b); color:#000; border:none; border-radius:8px; font-weight:900; cursor:pointer; font-size:1rem; }
+
+  @media (max-width:600px) { .mod-grid { grid-template-columns:1fr; } .header-inner { justify-content:center; text-align:center; } }
 </style>
 </head>
 <body>
@@ -295,11 +114,8 @@
         <p>DOWNLOAD GRATIS · 100% AMAN</p>
       </div>
     </div>
-    
     <div class="header-stats">
       <div class="stat-pill">📦 Total: <span class="val" id="totalMods">0</span></div>
-      <div class="stat-pill">⭐ Rating: <span class="val">4.8</span></div>
-      <!-- TOMBOL VIP -->
       <button class="btn-vip" id="btnOpenVIP">👑 VIP</button>
     </div>
   </div>
@@ -309,11 +125,6 @@
   <div class="hero">
     <h2>⛏️ Koleksi Mod Minecraft Terbaik</h2>
     <p>Kumpulan mod pilihan untuk menambah seru petualanganmu. Punya kode VIP? Bebas iklan!</p>
-    <div class="badges">
-      <span class="badge">✅ GRATIS</span>
-      <span class="badge">🔒 AMAN</span>
-      <span class="badge">⚡ CEPAT</span>
-    </div>
   </div>
 
   <div class="controls">
@@ -334,23 +145,17 @@
   <div class="mod-grid" id="modGrid"></div>
 </div>
 
-<!-- ================= MODAL IKLAN ================= -->
-<div id="modal">
+<!-- MODAL IKLAN -->
+<div id="modalIklan">
   <div class="modal-box">
     <h3>⏳ Menyiapkan File...</h3>
-    <p>Harap tunggu sebentar, file kamu sedang disiapkan.</p>
-    
-    <div class="iklan-slot">
-      (Slot Iklan Anda)<br><br>
-      <small style="opacity:0.5;">Bisa diganti gambar iklan nanti</small>
-    </div>
-    
+    <div class="iklan-slot">(Slot Iklan Anda)</div>
     <div class="timer-text" id="timerDisplay">5</div>
     
     <div class="vip-promo">
       <h4>👑 Bebas Iklan & Timer!</h4>
-      <p>Beli Akses VIP cuma Rp2.000 / minggu.<br>Klik tombol di bawah untuk membeli via Trakteer.</p>
-      <a href="https://trakteer.id/username-kamu" target="_blank" class="btn-beli-vip">💳 Beli VIP (Rp2.000)</a>
+      <p>Beli Akses VIP cuma Rp2.000 / minggu.</p>
+      <a href="https://trakteer.id/bang_ris2/gift" target="_blank" class="btn-beli-vip">💳 Beli VIP (Rp2.000)</a>
     </div>
 
     <button class="btn-lanjut-download" id="btnLanjutDownload">⬇️ Lanjut Download</button>
@@ -358,13 +163,13 @@
   </div>
 </div>
 
-<!-- ================= MODAL VIP (PASSWORD) ================= -->
-<div id="modalVIP" style="position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1001; display:none; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(5px);">
-  <div class="modal-box">
+<!-- MODAL VIP -->
+<div id="modalVIP">
+  <div class="modal-box" style="border-color:var(--gold);">
     <h3>👑 Akses VIP</h3>
-    <p>Masukkan kode rahasia dari Bang Ris untuk menghilangkan iklan selama 7 hari.</p>
-    <input type="text" id="inputVIPCode" placeholder="KODE-VIP-KAMU" autocomplete="off">
-    <button class="btn-submit" id="btnSubmitVIP">Aktifkan VIP</button>
+    <p>Masukkan kode rahasia untuk menghilangkan iklan.</p>
+    <input type="text" id="inputVIPCode" placeholder="KODE-VIP" autocomplete="off">
+    <button id="btnSubmitVIP">Aktifkan VIP</button>
     <button class="btn-close" id="btnCloseVIP">Tutup</button>
   </div>
 </div>
@@ -373,49 +178,35 @@
 /* ================================================================
    ⚙️ PENGATURAN (GANTI DI SINI) ⚙️
    ================================================================ */
-// 1. GANTI LINK TRAKTEER
-const LINK_TRAKTEER = "https://trakteer.id/username-kamu"; 
+// Link Trakteer kamu sudah aku pasang di HTML di atas.
+const KODE_VIP_RAHASIA = "VIP-BANGRIS"; // GANTI KODE RAHASIA DI SINI
+const DURASI_VIP_HARI = 7; // BERAPA HARI VIP AKTIF
 
-// 2. GANTI KODE VIP RAHASIA
-const KODE_VIP_RAHASIA = "VIP-BANGRIS"; 
-
-// 3. BERAPA HARI VIP BERLAKU
-const DURASI_VIP_HARI = 7; 
-
-/* ================================================================
-   9 DATA MOD KAMU (JANGAN DIUBAH)
-   ================================================================ */
+// 9 DATA MOD KAMU
 const MODS = [
-  { id:1, name:"Torch Offhand BH", category:"addon", emoji:"🔦", version:"v3.9.5", rating:4.8, downloads:"10.9 KB", desc:"Add-on Minecraft Bedrock yang memungkinkan kamu memegang obor di tangan kiri (offhand).", link:"https://www.mediafire.com/file/qywov0zighrv4if/Torch_Offhand_BH_v3.9.5.mcpack/file" },
-  { id:2, name:"Actions Stuff", category:"addon", emoji:"🎬", version:"v1.12", rating:4.7, downloads:"63.3 MB", desc:"Add-on Minecraft Bedrock yang menambahkan berbagai animasi dan aksi keren.", link:"https://www.mediafire.com/file/h2ff48qea7vpwgr/Actions_Stuff_1.12.mcpack/file" },
-  { id:3, name:"Create Movement", category:"addon", emoji:"🏃", version:"v1.0", rating:4.6, downloads:"1.2 MB", desc:"Tingkatkan gaya gerak karaktermu dengan animasi pergerakan baru.", link:"https://www.mediafire.com/file/kv3lvve9oicw3iz/CreateMovement.mcaddon.zip/file" },
-  { id:4, name:"Custom Space Cubemap", category:"shader", emoji:"🌌", version:"v2.0", rating:4.9, downloads:"5.4 MB", desc:"Ganti langit dan luar angkasa Minecraft dengan tekstur cubemap kustom.", link:"https://www.mediafire.com/file/phl8c1fozb3z4i7/Custom_Space_Cubemap_v2.0.mcpack.zip/file" },
-  { id:5, name:"Kampungku", category:"world", emoji:"🏘️", version:"v1.0", rating:4.5, downloads:"12 MB", desc:"Add-on bertema pedesaan dan perkampungan Indonesia.", link:"https://www.mediafire.com/file/43q8vg2qo7og59t/Kampungku.mcaddon/file" },
-  { id:6, name:"OP Items Pack", category:"weapon", emoji:"⚔️", version:"v1.0", rating:4.6, downloads:"2.1 MB", desc:"Kumpulan item super overpower (OP) untuk membuatmu menjadi petualang terkuat.", link:"https://www.mediafire.com/file/bxixnvoionwmk3w/OlCWaPvhUe.mcpack/file" },
-  { id:7, name:"Tree Drops OP Items", category:"addon", emoji:"🌳", version:"v1.0", rating:4.9, downloads:"650 KB", desc:"Add-on OP! Menebang pohon akan menjatuhkan item-item super kuat.", link:"https://www.mediafire.com/file/8pxnl2rotxp5h6z/Tree_Drops_OP_Items.mcaddon.zip/file" },
-  { id:8, name:"Mob Overhaul", category:"mob", emoji:"🐲", version:"v1.0", rating:4.7, downloads:"3.5 MB", desc:"Modifikasi dan tambahkan variasi mob baru di Minecraft Bedrock.", link:"https://www.mediafire.com/file/6ish2zbz6kauoaz/VBd6STRhHR.mcaddon/file" },
-  { id:9, name:"Weapon & Armor Pack", category:"armor", emoji:"🛡️", version:"v1.0", rating:4.8, downloads:"4.2 MB", desc:"Tambahkan set armor dan senjata baru yang keren ke dalam inventory-mu.", link:"https://www.mediafire.com/file/n6wk9afi9mec4ju/vCOz8mJgQw.mcaddon/file" }
+  { id:1, name:"Torch Offhand BH", category:"addon", emoji:"🔦", version:"v3.9.5", rating:4.8, downloads:"10.9 KB", desc:"Memegang obor di tangan kiri.", link:"https://www.mediafire.com/file/qywov0zighrv4if/Torch_Offhand_BH_v3.9.5.mcpack/file" },
+  { id:2, name:"Actions Stuff", category:"addon", emoji:"🎬", version:"v1.12", rating:4.7, downloads:"63.3 MB", desc:"Animasi dan aksi keren.", link:"https://www.mediafire.com/file/h2ff48qea7vpwgr/Actions_Stuff_1.12.mcpack/file" },
+  { id:3, name:"Create Movement", category:"addon", emoji:"🏃", version:"v1.0", rating:4.6, downloads:"1.2 MB", desc:"Animasi pergerakan baru.", link:"https://www.mediafire.com/file/kv3lvve9oicw3iz/CreateMovement.mcaddon.zip/file" },
+  { id:4, name:"Custom Space Cubemap", category:"shader", emoji:"🌌", version:"v2.0", rating:4.9, downloads:"5.4 MB", desc:"Langit dan luar angkasa kustom.", link:"https://www.mediafire.com/file/phl8c1fozb3z4i7/Custom_Space_Cubemap_v2.0.mcpack.zip/file" },
+  { id:5, name:"Kampungku", category:"world", emoji:"🏘️", version:"v1.0", rating:4.5, downloads:"12 MB", desc:"Suasana pedesaan Indonesia.", link:"https://www.mediafire.com/file/43q8vg2qo7og59t/Kampungku.mcaddon/file" },
+  { id:6, name:"OP Items Pack", category:"weapon", emoji:"⚔️", version:"v1.0", rating:4.6, downloads:"2.1 MB", desc:"Item super overpower.", link:"https://www.mediafire.com/file/bxixnvoionwmk3w/OlCWaPvhUe.mcpack/file" },
+  { id:7, name:"Tree Drops OP Items", category:"addon", emoji:"🌳", version:"v1.0", rating:4.9, downloads:"650 KB", desc:"Pohon menjatuhkan item OP.", link:"https://www.mediafire.com/file/8pxnl2rotxp5h6z/Tree_Drops_OP_Items.mcaddon.zip/file" },
+  { id:8, name:"Mob Overhaul", category:"mob", emoji:"🐲", version:"v1.0", rating:4.7, downloads:"3.5 MB", desc:"Variasi mob baru.", link:"https://www.mediafire.com/file/6ish2zbz6kauoaz/VBd6STRhHR.mcaddon/file" },
+  { id:9, name:"Weapon & Armor Pack", category:"armor", emoji:"🛡️", version:"v1.0", rating:4.8, downloads:"4.2 MB", desc:"Armor dan senjata baru.", link:"https://www.mediafire.com/file/n6wk9afi9mec4ju/vCOz8mJgQw.mcaddon/file" }
 ];
 
 const CAT_LABELS = { addon:"🧩 Add-on", shader:"✨ Shader", world:"🌍 World", weapon:"⚔️ Weapon", armor:"🛡️ Armor", mob:"🐲 Mob" };
 let currentFilter = 'all', currentSearch = '';
 const grid = document.getElementById('modGrid');
-const totalModsEl = document.getElementById('totalMods');
 
-/* ================================================================
-   LOGIKA VIP (PASSWORD)
-   ================================================================ */
-const btnOpenVIP = document.getElementById('btnOpenVIP');
-const modalVIP = document.getElementById('modalVIP');
-const btnCloseVIP = document.getElementById('btnCloseVIP');
-const btnSubmitVIP = document.getElementById('btnSubmitVIP');
-const inputVIPCode = document.getElementById('inputVIPCode');
-
+// ==========================================
+// LOGIKA VIP
+// ==========================================
 function cekStatusVIP() {
   const vipExpired = localStorage.getItem('vip_expired');
+  const btnOpenVIP = document.getElementById('btnOpenVIP');
   if (vipExpired) {
-    const now = new Date().getTime();
-    if (now < parseInt(vipExpired)) {
+    if (new Date().getTime() < parseInt(vipExpired)) {
       btnOpenVIP.classList.add('active');
       btnOpenVIP.innerHTML = "👑 VIP Aktif";
       return true;
@@ -423,28 +214,130 @@ function cekStatusVIP() {
       localStorage.removeItem('vip_expired');
       btnOpenVIP.classList.remove('active');
       btnOpenVIP.innerHTML = "👑 VIP";
-      return false;
     }
   }
-  btnOpenVIP.classList.remove('active');
-  btnOpenVIP.innerHTML = "👑 VIP";
   return false;
 }
 
-btnOpenVIP.addEventListener('click', () => {
+document.getElementById('btnOpenVIP').addEventListener('click', () => {
   if (cekStatusVIP()) {
-    const sisaHari = Math.ceil((parseInt(localStorage.getItem('vip_expired')) - new Date().getTime()) / (1000 * 60 * 60 * 24));
-    alert("Kamu sudah VIP! Iklan sudah hilang. Sisa waktu: " + sisaHari + " hari lagi.");
+    alert("Kamu sudah VIP! Iklan sudah hilang.");
   } else {
-    modalVIP.style.display = 'flex';
+    document.getElementById('modalVIP').classList.add('show');
   }
 });
 
-btnCloseVIP.addEventListener('click', () => {
-  modalVIP.style.display = 'none';
+document.getElementById('btnCloseVIP').addEventListener('click', () => {
+  document.getElementById('modalVIP').classList.remove('show');
 });
 
-btnSubmitVIP.addEventListener('click', () => {
-  const kode = inputVIPCode.value.trim().toUpperCase();
+document.getElementById('btnSubmitVIP').addEventListener('click', () => {
+  const kode = document.getElementById('inputVIPCode').value.trim().toUpperCase();
   if (kode === KODE_VIP_RAHASIA) {
-    const expiredTime = new Date(
+    const expiredTime = new Date().getTime() + (DURASI_VIP_HARI * 24 * 60 * 60 * 1000);
+    localStorage.setItem('vip_expired', expiredTime);
+    alert("🎉 Berhasil! Kamu sekarang VIP.");
+    document.getElementById('modalVIP').classList.remove('show');
+    cekStatusVIP();
+  } else {
+    alert("❌ Kode VIP salah!");
+  }
+});
+
+// ==========================================
+// LOGIKA IKLAN & TIMER
+// ==========================================
+let currentDownloadLink = "";
+let timerInterval = null;
+
+function klikDownload(link) {
+  if (cekStatusVIP()) {
+    window.open(link, '_blank'); // VIP langsung download
+  } else {
+    // Bukan VIP, munculin iklan
+    currentDownloadLink = link;
+    document.getElementById('modalIklan').classList.add('show');
+    
+    let timeLeft = 5;
+    document.getElementById('timerDisplay').textContent = timeLeft;
+    document.getElementById('btnLanjutDownload').classList.remove('show');
+    document.getElementById('timerDisplay').style.display = 'block';
+    
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      document.getElementById('timerDisplay').textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        document.getElementById('timerDisplay').style.display = 'none';
+        document.getElementById('btnLanjutDownload').classList.add('show');
+      }
+    }, 1000);
+  }
+}
+
+document.getElementById('btnCloseIklan').addEventListener('click', () => {
+  document.getElementById('modalIklan').classList.remove('show');
+  clearInterval(timerInterval);
+});
+
+document.getElementById('btnLanjutDownload').addEventListener('click', () => {
+  document.getElementById('modalIklan').classList.remove('show');
+  window.open(currentDownloadLink, '_blank');
+});
+
+// ==========================================
+// RENDER MOD
+// ==========================================
+function renderMods() {
+  const filtered = MODS.filter(mod => {
+    const matchCat = currentFilter === 'all' || mod.category === currentFilter;
+    const matchSearch = mod.name.toLowerCase().includes(currentSearch.toLowerCase());
+    return matchCat && matchSearch;
+  });
+
+  grid.innerHTML = '';
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div style="text-align:center; grid-column:1/-1; padding:60px 20px; color:#8b949e;"><h3>Tidak ada mod ditemukan</h3></div>`;
+    return;
+  }
+
+  filtered.forEach((mod) => {
+    const card = document.createElement('div');
+    card.className = 'mod-card';
+    card.innerHTML = `
+      <div class="mod-img">
+        <span class="mod-category">${CAT_LABELS[mod.category]}</span>
+        <span class="mod-version">${mod.version}</span>
+        <span class="emoji">${mod.emoji}</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-name">${mod.name}</div>
+        <div class="mod-author">oleh Bang Ris</div>
+        <div class="mod-desc">${mod.desc}</div>
+        <div class="mod-meta"><span class="star">⭐ ${mod.rating}</span><span>📥 ${mod.downloads}</span></div>
+        <div class="mod-actions">
+          <button class="btn-download" onclick="klikDownload('${mod.link}')">⬇️ Download</button>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => { currentSearch = e.target.value; renderMods(); });
+document.getElementById('filterWrap').addEventListener('click', (e) => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = btn.dataset.cat;
+  renderMods();
+});
+
+document.getElementById('totalMods').textContent = MODS.length;
+renderMods();
+cekStatusVIP();
+</script>
+</body>
+</html>

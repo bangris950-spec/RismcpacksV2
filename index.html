@@ -12,98 +12,62 @@
     --gold:#f5c542; --text:#e6edf3; --text-dim:#8b949e; --blue:#4a9eff; --pixel-font:'Courier New',monospace;
   }
   html { scroll-behavior:smooth; }
-  body {
-    background:var(--bg-dark); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif;
-    min-height:100vh; line-height:1.6;
-  }
-  header {
-    position:sticky; top:0; z-index:100; background:linear-gradient(135deg,#1a2332,#0d1117);
-    border-bottom:3px solid var(--green); box-shadow:0 4px 20px rgba(92,184,92,.15); padding:16px 20px;
-  }
+  body { background:var(--bg-dark); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; min-height:100vh; line-height:1.6; }
+  header { position:sticky; top:0; z-index:100; background:linear-gradient(135deg,#1a2332,#0d1117); border-bottom:3px solid var(--green); padding:16px 20px; }
   .header-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
   .logo { display:flex; align-items:center; gap:12px; }
-  .logo-icon { font-size:2.2rem; animation:float 3s ease-in-out infinite; }
-  @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-5px);} }
-  .logo h1 { font-family:var(--pixel-font); font-size:1.4rem; font-weight:900; color:var(--green-bright); text-shadow:2px 2px 0 #000; }
+  .logo-icon { font-size:2.2rem; }
+  .logo h1 { font-family:var(--pixel-font); font-size:1.4rem; font-weight:900; color:var(--green-bright); }
   .logo p { font-size:.72rem; color:var(--text-dim); font-family:var(--pixel-font); }
-  
   .header-stats { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
   .stat-pill { background:rgba(92,184,92,.1); border:2px solid var(--green-dark); border-radius:8px; padding:6px 14px; font-size:.8rem; font-weight:700; display:flex; align-items:center; gap:6px; font-family:var(--pixel-font); }
   .stat-pill .val { color:var(--gold); font-size:1rem; }
-
-  /* TOMBOL VIP */
-  .btn-vip {
-    background:linear-gradient(180deg, #ffd700, #b8860b);
-    color:#000; border:2px solid #fff; border-radius:8px;
-    padding:8px 16px; font-weight:900; cursor:pointer;
-    font-family:var(--pixel-font); font-size:.8rem;
-    box-shadow:0 0 15px rgba(255,215,0,.5); transition:.2s;
-    display:flex; align-items:center; gap:5px;
-  }
-  .btn-vip:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(255,215,0,.8); }
-  .btn-vip.active { background:linear-gradient(180deg, #4cd97b, #2a7a4a); color:#fff; border-color:#4cd97b; box-shadow:0 0 15px rgba(76,217,123,.5); }
+  .btn-vip { background:linear-gradient(180deg, #ffd700, #b8860b); color:#000; border:2px solid #fff; border-radius:8px; padding:8px 16px; font-weight:900; cursor:pointer; font-family:var(--pixel-font); font-size:.8rem; }
+  .btn-vip.active { background:linear-gradient(180deg, #4cd97b, #2a7a4a); color:#fff; border-color:#4cd97b; }
 
   .container { max-width:1100px; margin:0 auto; padding:20px 20px 80px; }
-  .hero {
-    background:linear-gradient(135deg,#1c2a1c,#1a2332); border:3px solid var(--green-dark); border-radius:16px;
-    padding:24px; margin-bottom:24px; position:relative; overflow:hidden;
-  }
+  .hero { background:linear-gradient(135deg,#1c2a1c,#1a2332); border:3px solid var(--green-dark); border-radius:16px; padding:24px; margin-bottom:24px; }
   .hero h2 { font-family:var(--pixel-font); font-size:1.5rem; color:var(--green-bright); margin-bottom:8px; }
   .hero p { color:var(--text-dim); font-size:.9rem; max-width:600px; }
   
   .controls { display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; align-items:center; }
   .search-wrap { flex:1; min-width:220px; position:relative; }
   .search-wrap::before { content:"🔍"; position:absolute; left:14px; top:50%; transform:translateY(-50%); }
-  .search-input { width:100%; padding:12px 14px 12px 44px; background:var(--bg-card); border:2px solid var(--border); border-radius:10px; color:var(--text); font-size:.9rem; font-family:inherit; }
-  .search-input:focus { outline:none; border-color:var(--green); }
+  .search-input { width:100%; padding:12px 14px 12px 44px; background:var(--bg-card); border:2px solid var(--border); border-radius:10px; color:var(--text); font-size:.9rem; }
   .filter-wrap { display:flex; gap:6px; flex-wrap:wrap; }
-  .filter-btn { padding:10px 16px; background:var(--bg-card); border:2px solid var(--border); border-radius:10px; color:var(--text-dim); font-weight:800; font-size:.78rem; cursor:pointer; transition:.2s; font-family:var(--pixel-font); }
-  .filter-btn:hover { border-color:var(--green); color:var(--text); }
+  .filter-btn { padding:10px 16px; background:var(--bg-card); border:2px solid var(--border); border-radius:10px; color:var(--text-dim); font-weight:800; font-size:.78rem; cursor:pointer; font-family:var(--pixel-font); }
   .filter-btn.active { background:linear-gradient(180deg,var(--green),var(--green-dark)); border-color:var(--green-bright); color:#fff; }
 
   .mod-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
-  .mod-card { background:var(--bg-card); border:2px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:.25s; }
-  .mod-card:hover { border-color:var(--green); transform:translateY(-4px); }
+  .mod-card { background:var(--bg-card); border:2px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
   
-  /* CSS UNTUK GAMBAR MOD */
   .mod-img { height:160px; background:linear-gradient(135deg,#2a3a2a,#1a2332); display:flex; align-items:center; justify-content:center; font-size:4rem; position:relative; border-bottom:2px solid var(--border); overflow: hidden; }
-  .mod-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-  .mod-card:hover .mod-img img { transform: scale(1.1); }
+  .mod-img img { width: 100%; height: 100%; object-fit: cover; }
 
   .mod-version { position:absolute; top:10px; right:10px; background:rgba(0,0,0,.7); border:1px solid var(--gold); color:var(--gold); padding:2px 8px; border-radius:6px; font-size:.65rem; font-weight:900; font-family:var(--pixel-font); z-index:2; }
   .mod-category { position:absolute; top:10px; left:10px; background:rgba(92,184,92,.9); color:#fff; padding:2px 8px; border-radius:6px; font-size:.65rem; font-weight:900; font-family:var(--pixel-font); z-index:2; }
   .mod-body { padding:14px 16px; flex:1; display:flex; flex-direction:column; }
   .mod-name { font-size:1rem; font-weight:900; color:var(--text); margin-bottom:4px; font-family:var(--pixel-font); }
   .mod-author { font-size:.72rem; color:var(--text-dim); margin-bottom:8px; }
-  .mod-desc { font-size:.8rem; color:var(--text-dim); margin-bottom:12px; flex:1; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .mod-desc { font-size:.8rem; color:var(--text-dim); margin-bottom:12px; flex:1; }
   .mod-meta { display:flex; gap:10px; font-size:.7rem; color:var(--text-dim); margin-bottom:10px; }
   .mod-actions { display:flex; gap:6px; }
-  .btn-download { flex:1; background:linear-gradient(180deg,var(--green),var(--green-dark)); border:2px solid var(--green-bright); color:#fff; padding:10px 12px; border-radius:8px; font-weight:900; font-size:.82rem; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 0 rgba(0,0,0,.4); }
-  .btn-download:hover { background:linear-gradient(180deg,var(--green-bright),var(--green)); }
+  .btn-download { flex:1; background:linear-gradient(180deg,var(--green),var(--green-dark)); border:2px solid var(--green-bright); color:#fff; padding:10px 12px; border-radius:8px; font-weight:900; font-size:.82rem; cursor:pointer; box-shadow:0 3px 0 rgba(0,0,0,.4); }
 
-  /* MODAL IKLAN & TIMER */
-  #modalIklan { position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1000; display:none; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(5px); }
-  #modalIklan.show { display:flex; }
-  .modal-box { background:var(--bg-card); border:3px solid var(--gold); border-radius:16px; padding:24px; max-width:420px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.9); }
+  /* MODAL IKLAN & VIP */
+  #modalIklan, #modalVIP { position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1000; display:none; align-items:center; justify-content:center; padding:20px; }
+  #modalIklan.show, #modalVIP.show { display:flex; }
+  .modal-box { background:var(--bg-card); border:3px solid var(--gold); border-radius:16px; padding:24px; max-width:420px; width:100%; text-align:center; }
   .modal-box h3 { color:var(--gold); font-family:var(--pixel-font); font-size:1.2rem; margin-bottom:8px; }
-  .modal-box p { font-size:.85rem; color:var(--text-dim); margin-bottom:15px; }
-  .iklan-slot { background:#0d1117; height:120px; border:2px dashed var(--border); border-radius:8px; display:flex; align-items:center; justify-content:center; margin:15px 0; color:var(--text-dim); font-size:.8rem; text-align:center; }
+  .iklan-slot { background:#0d1117; height:120px; border:2px dashed var(--border); border-radius:8px; display:flex; align-items:center; justify-content:center; margin:15px 0; color:var(--text-dim); font-size:.8rem; }
   .timer-text { font-size:2.5rem; font-weight:900; color:var(--gold); margin:10px 0; font-family:var(--pixel-font); }
   .vip-promo { background:linear-gradient(135deg, #2a1e4a, #4b2a7a); border:2px solid var(--gold); border-radius:12px; padding:15px; margin:15px 0; text-align:center; }
-  .vip-promo h4 { color:#ffd700; font-size:1rem; margin-bottom:5px; }
-  .vip-promo p { font-size:.75rem; color:#e6edf3; margin-bottom:10px; }
   .btn-beli-vip { display:inline-block; background:linear-gradient(180deg, #ffd700, #b8860b); color:#000; padding:10px 20px; border-radius:8px; font-weight:900; text-decoration:none; font-size:.85rem; width:100%; }
   .btn-lanjut-download { display:none; width:100%; background:var(--green); color:#fff; padding:12px; border:none; border-radius:8px; font-weight:900; cursor:pointer; margin-top:10px; }
   .btn-lanjut-download.show { display:block; }
-  .btn-close { background:transparent !important; color:var(--text-dim) !important; margin-top:10px; border:none; font-size:0.75rem; cursor:pointer; text-decoration:underline; }
-
-  /* MODAL VIP */
-  #modalVIP { position:fixed; inset:0; background:rgba(5,3,13,.95); z-index:1001; display:none; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(5px); }
-  #modalVIP.show { display:flex; }
+  .btn-close { background:transparent; color:var(--text-dim); margin-top:10px; border:none; font-size:0.75rem; cursor:pointer; text-decoration:underline; }
   #inputVIPCode { width:100%; padding:12px; background:#0d1117; border:2px solid var(--border); border-radius:8px; color:#fff; text-align:center; font-size:1rem; margin-bottom:12px; font-weight:900; }
   #btnSubmitVIP { width:100%; padding:12px; background:linear-gradient(180deg,#ffd700,#b8860b); color:#000; border:none; border-radius:8px; font-weight:900; cursor:pointer; font-size:1rem; }
-
-  @media (max-width:600px) { .mod-grid { grid-template-columns:1fr; } .header-inner { justify-content:center; text-align:center; } }
 </style>
 </head>
 <body>
@@ -127,7 +91,7 @@
 <div class="container">
   <div class="hero">
     <h2>⛏️ Koleksi Mod Minecraft Terbaik</h2>
-    <p>Kumpulan mod pilihan untuk menambah seru petualanganmu. Punya kode VIP? Bebas iklan!</p>
+    <p>Kumpulan mod pilihan. Punya kode VIP? Bebas iklan!</p>
   </div>
 
   <div class="controls">
@@ -154,13 +118,11 @@
     <h3>⏳ Menyiapkan File...</h3>
     <div class="iklan-slot">(Slot Iklan Anda)</div>
     <div class="timer-text" id="timerDisplay">5</div>
-    
     <div class="vip-promo">
       <h4>👑 Bebas Iklan & Timer!</h4>
       <p>Beli Akses VIP cuma Rp2.000 / minggu.</p>
       <a href="https://trakteer.id/bang_ris2/gift" target="_blank" class="btn-beli-vip">💳 Beli VIP (Rp2.000)</a>
     </div>
-
     <button class="btn-lanjut-download" id="btnLanjutDownload">⬇️ Lanjut Download</button>
     <button class="btn-close" id="btnCloseIklan">Batal Download</button>
   </div>
@@ -178,14 +140,9 @@
 </div>
 
 <script>
-/* ================================================================
-   ⚙️ PENGATURAN
-   ================================================================ */
 const KODE_VIP_RAHASIA = "VIP-BANGRIS"; 
 const DURASI_VIP_HARI = 7; 
 
-// 9 DATA MOD KAMU
-// Perhatikan bagian "img" di mod 1 dan 2. Link kamu udah aku masukin.
 const MODS = [
   { id:1, name:"Torch Offhand BH", category:"addon", emoji:"🔦", version:"v3.9.5", rating:4.8, downloads:"10.9 KB", desc:"Memegang obor di tangan kiri.", link:"https://www.mediafire.com/file/qywov0zighrv4if/Torch_Offhand_BH_v3.9.5.mcpack/file", img:"https://i.postimg.cc/WbrNyTT4/20260611-21564-jpeg.jpg" },
   { id:2, name:"Actions Stuff", category:"addon", emoji:"🎬", version:"v1.12", rating:4.7, downloads:"63.3 MB", desc:"Animasi dan aksi keren.", link:"https://www.mediafire.com/file/h2ff48qea7vpwgr/Actions_Stuff_1.12.mcpack/file", img:"https://i.postimg.cc/05KP6P6p/images-(1).jpg" },
@@ -202,9 +159,6 @@ const CAT_LABELS = { addon:"🧩 Add-on", shader:"✨ Shader", world:"🌍 World
 let currentFilter = 'all', currentSearch = '';
 const grid = document.getElementById('modGrid');
 
-// ==========================================
-// LOGIKA VIP
-// ==========================================
 function cekStatusVIP() {
   const vipExpired = localStorage.getItem('vip_expired');
   const btnOpenVIP = document.getElementById('btnOpenVIP');
@@ -223,16 +177,10 @@ function cekStatusVIP() {
 }
 
 document.getElementById('btnOpenVIP').addEventListener('click', () => {
-  if (cekStatusVIP()) {
-    alert("Kamu sudah VIP! Iklan sudah hilang.");
-  } else {
-    document.getElementById('modalVIP').classList.add('show');
-  }
+  if (cekStatusVIP()) { alert("Kamu sudah VIP! Iklan sudah hilang."); } else { document.getElementById('modalVIP').classList.add('show'); }
 });
 
-document.getElementById('btnCloseVIP').addEventListener('click', () => {
-  document.getElementById('modalVIP').classList.remove('show');
-});
+document.getElementById('btnCloseVIP').addEventListener('click', () => { document.getElementById('modalVIP').classList.remove('show'); });
 
 document.getElementById('btnSubmitVIP').addEventListener('click', () => {
   const kode = document.getElementById('inputVIPCode').value.trim().toUpperCase();
@@ -242,24 +190,18 @@ document.getElementById('btnSubmitVIP').addEventListener('click', () => {
     alert("🎉 Berhasil! Kamu sekarang VIP.");
     document.getElementById('modalVIP').classList.remove('show');
     cekStatusVIP();
-  } else {
-    alert("❌ Kode VIP salah!");
-  }
+  } else { alert("❌ Kode VIP salah!"); }
 });
 
-// ==========================================
-// LOGIKA IKLAN & TIMER
-// ==========================================
 let currentDownloadLink = "";
 let timerInterval = null;
 
 function klikDownload(link) {
   if (cekStatusVIP()) {
-    window.open(link, '_blank'); // VIP langsung download
+    window.open(link, '_blank'); 
   } else {
     currentDownloadLink = link;
     document.getElementById('modalIklan').classList.add('show');
-    
     let timeLeft = 5;
     document.getElementById('timerDisplay').textContent = timeLeft;
     document.getElementById('btnLanjutDownload').classList.remove('show');
@@ -288,9 +230,6 @@ document.getElementById('btnLanjutDownload').addEventListener('click', () => {
   window.open(currentDownloadLink, '_blank');
 });
 
-// ==========================================
-// RENDER MOD (DENGAN GAMBAR)
-// ==========================================
 function renderMods() {
   const filtered = MODS.filter(mod => {
     const matchCat = currentFilter === 'all' || mod.category === currentFilter;
@@ -308,10 +247,11 @@ function renderMods() {
     const card = document.createElement('div');
     card.className = 'mod-card';
     
-    // LOGIKA BARU: Kalau ada gambar, pakai <img>. Kalau nggak ada, pakai emoji.
-    const imgHtml = mod.img 
-      ? `<img src="${mod.img}" alt="${mod.name}">` 
-      : `<span class="emoji">${mod.emoji}</span>`;
+    // PERBAIKAN: Pakai onerror buat jaga-jaga kalau gambar mati
+    let imgHtml = `<span class="emoji">${mod.emoji}</span>`;
+    if(mod.img) {
+        imgHtml = `<img src="${mod.img}" alt="${mod.name}" onerror="this.style.display='none'; this.parentElement.innerHTML = '<span class=\\'emoji\\'>${mod.emoji}</span>'; this.parentElement.appendChild(document.querySelector('.mod-category')); this.parentElement.appendChild(document.querySelector('.mod-version'));">`;
+    }
 
     card.innerHTML = `
       <div class="mod-img">
@@ -348,4 +288,4 @@ renderMods();
 cekStatusVIP();
 </script>
 </body>
-   </html>
+</html>
